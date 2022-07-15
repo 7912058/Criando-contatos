@@ -16,11 +16,11 @@
 <header>
     <nav>
         <ul>
-            <li><a th:href="@{/}"> AlgaWorks Contatos </a></li>
+            <li><a href="@{/}"> AlgaWorks Contatos </a></li>
 
-            <li><a th:href="@{/contatos}"> Listar </a></li>
+            <li><a href="@{/contatos}"> Listar </a></li>
 
-            <li><a th:href="@{/contatos/novo}"> Novo </a></li>
+            <li><a href="@{/contatos/novo}"> Novo </a></li>
         </ul>
     </nav>
 
@@ -32,25 +32,25 @@
     </section>
 
     <section>
-        <form th:action="${contato.novo} ? @{/contatos} : @{/contatos/{contato}(contato=${contato.id})}"
-              th:object="${contato}" th:method="${contato.novo} ? post : put">
+        <form :action="${contato.novo} ? @{/contatos} : @{/contatos/{contato}(contato=${contato.id})}"
+              :object="${contato}" :method="${contato.novo} ? post : put">
 
-            <div th:if="${!contato.novo}">
+            <div :if="${!contato.novo}">
                 <label>Código: </label>
 
-                <input th:field="*{id}" readonly="readonly" />
+                <input field="*{id}" readonly="readonly" />
             </div>
 
             <div>
                 <label>Nome: </label>
 
-                <input th:field="*{nome}" />
+                <input tfield="*{nome}" />
             </div>
 
             <div>
                 <label>Telefone: </label>
 
-                <input th:field="*{telefone}"/>
+                <input field="*{telefone}"/>
             </div>
 
             <div>

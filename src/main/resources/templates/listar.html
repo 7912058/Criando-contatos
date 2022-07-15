@@ -16,11 +16,11 @@
 <header>
     <nav>
         <ul>
-            <li><a th:href="@{/}"> AlgaWorks Contatos </a></li>
+            <li><a href="@{/}"> AlgaWorks Contatos </a></li>
 
-            <li><a th:href="@{/contatos}"> Listar </a></li>
+            <li><a href="@{/contatos}"> Listar </a></li>
 
-            <li><a th:href="@{/contatos/novo}"> Novo </a></li>
+            <li><a href="@{/contatos/novo}"> Novo </a></li>
         </ul>
     </nav>
 
@@ -43,18 +43,18 @@
             </thead>
 
             <tbody>
-            <tr th:each="contato: ${contatos}">
-                <td th:text="${contato.nome}"></td>
+            <tr each="contato: ${contatos}">
+                <td text="${contato.nome}"></td>
 
-                <td th:text="${contato.telefone}"></td>
+                <td text="${contato.telefone}"></td>
 
                 <td>
-                    <a th:href="@{/contatos/{contato}/editar(contato=${contato.id})}">Editar</a>
+                    <a href="@{/contatos/{contato}/editar(contato=${contato.id})}">Editar</a>
                 </td>
 
                 <td>
-                    <form th:action="@{/contatos/{contato}(contato=${contato.id})}"
-                          th:method="delete">
+                    <form action="@{/contatos/{contato}(contato=${contato.id})}"
+                          method="delete">
                         <button>Remover</button>
                     </form>
                 </td>

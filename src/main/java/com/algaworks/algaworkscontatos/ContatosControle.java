@@ -25,13 +25,10 @@ public class ContatosControle {
     }
 
     @GetMapping("/contatos")
-    public ModelAndView listar() {
-        ModelAndView modelAndView = new ModelAndView("listar");
-
-        modelAndView.addObject("contatos", LISTA_CONTATOS);
-
-        return modelAndView;
+    public String listar() {
+        return "listar";
     }
+
 }
 
 
